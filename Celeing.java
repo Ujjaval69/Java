@@ -1,6 +1,6 @@
 public class Celeing{
     public static void main(String[] args) {
-        int []arr={2,3,4,5,9,14,16,18};
+        int []arr={2,3,4,5,9,14,16,17,18};
         int target=15;
         int ans=binary(arr,target);
         System.out.println(ans);
