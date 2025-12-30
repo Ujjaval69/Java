@@ -30,12 +30,22 @@ public class LinkedList{
         tail.next=newNode;
         tail=newNode;
     }
+    public void print(){
+        Node temp=head;
+        if(head==null){
+            System.out.print("LL is empty");
+        }
+        while(temp!=null){
+            System.out.print(temp.data+" ");
+            temp=temp.next;
+        }
+    }
     public static void main(String[] args) {
         LinkedList ll=new LinkedList();
-        ll.addFirst(1);
         ll.addFirst(2);
-        
-    
-        
+        ll.addFirst(1);  
+        ll.addLast(3);
+        ll.addLast(4);
+        ll.print();     
     }
 }
