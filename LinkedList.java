@@ -9,7 +9,7 @@ public class LinkedList{
     }
     public static Node head;
     public static Node tail;
-    public static int size;
+    public static int size=0;
     public void addFirst(int data){
         //step1=create new Node
         Node newNode=new Node(data);
@@ -59,8 +59,18 @@ public class LinkedList{
         newNode.next=temp.next;
         temp.next=newNode;
     }
-    public void size(){
-
+    public int itrSearch(int key){
+        Node temp=head;
+        int i=0;
+        while(temp!=null){
+            if(temp.data==key){
+                return i;
+            }
+            temp=temp.next;
+            i++;
+        }
+        return -1;
+        
     }
     public static void main(String[] args) {
         LinkedList ll=new LinkedList();
@@ -69,6 +79,6 @@ public class LinkedList{
         ll.addLast(3);
         ll.addLast(4);
         ll.add(2,9);
-        ll.print();     
+        System.out.print("SIze: "+ll.size);     
     }
 }
