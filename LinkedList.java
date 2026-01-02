@@ -90,13 +90,56 @@ public class LinkedList{
         return Helper(head, key);
          
     }
+    public void reverse(){
+        Node prev=null;
+        Node curr=tail=head;
+        Node next;
+        while(curr!=null){
+            next=curr.next;
+            curr.next=prev;
+            prev=curr;
+            curr=next;
+        }
+        head=prev;
+    }
+    public void deleteNthfromEnd(int n){
+        int sz=0;
+        Node temp=head;
+        while(temp!=null){
+            temp=temp.next;
+            sz++;
+        }
+        if(n==sz){
+            head=head.next;//removeFirst
+            return;
+        }
+        int i=1;
+        int iToFind=sz-n;
+        Node prev=head;
+        while(i<iToFind){
+            prev=prev.next;
+            i++;
+        }
+        prev.next=prev.next.next;
+        return;
+
+    }
+    public Node findMid(Node head){
+        Node slow=head;
+        Node fast=head;
+        while(fast!=null&&fast.next!=null){
+            slow=slow.next;
+            fast=fast.next.next;
+        }
+        return slow;
+    }
     public static void main(String[] args) {
         LinkedList ll=new LinkedList();
         ll.addFirst(2);
         ll.addFirst(1);  
         ll.addLast(3);
         ll.addLast(4);
-        ll.add(2,9);
-        System.out.print("SIze: "+ll.size);     
+        ll.reverse();
+        ll.print();     
     }
 }
