@@ -12,13 +12,13 @@ public class smax{
             arr[i]=in.nextInt();
             
         }
-        int max=-1;
+        int max=Integer.MIN_VALUE;
         for(int i=0;i<n;i++){
             if(arr[i]>max){
                 max=arr[i];
             }
         }
-        int smax=0;
+        int smax=Integer.MIN_VALUE;
         for(int i=0;i<n;i++){
             if(arr[i]>smax && arr[i]!=max){
                 smax=arr[i];
