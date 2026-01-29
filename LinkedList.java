@@ -135,7 +135,7 @@ public class LinkedList{
         }
         return slow;
     }
-    public boolean check
+    
     public boolean isCycle(){
         Node slow=head;
         Node fast=head;
